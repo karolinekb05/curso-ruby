@@ -2,6 +2,6 @@
 
 Aprendendo a programar com Ruby
 
-## Links importantes
+## Links
 
 https://www.ruby-lang.org/pt/
