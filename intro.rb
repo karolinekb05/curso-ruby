@@ -95,3 +95,61 @@ livros.values.each { |classificacao|
 }
 
 puts classificacoes
+
+#Blocos são sempre associados a métodos. Como o método times, que pega o bloco e roda o código dele várias e várias vezes.
+5.times { print "Odelay! " } #roda o código 5 vezes
+
+
+#o método .times (significa vezes) envia o valor para a variável |vez| . Porém, note que a variável vez só é conhecida dentro do bloco.
+#A variável fica sempre dentro do bloco com os pipes ||
+5.times { |vez|
+  puts vez
+}
+
+#O método gsub precisa de dois argumentos, que nós passamos para o gsub ao incluir duas strings entre parênteses. 
+#Argumentos falam para o método exatamente o que fazer
+
+#Sobre os parênteses no Ruby: você pode fazer o que você quiser com parênteses desde que a legibilidade do seu código seja boa.
+puts "Olá!"
+puts("Olá!")
+
+#DICAS
+#Para fazer o seu programa ficar menor:
+#Se você tem que fazer a mesma coisa em mais de uma parte do seu código, é mais fácil colocar este código em um método separado. Seu código será menor.
+
+#Para tornar o seu código mais fácil de ler:
+#Suponha que o seu programa precise fazer um monte de coisas diferentes. 
+#Você poderia colocar tudo em um pedaço longo de código. Mas isso tornaria díficil de ler e entender o seu código depois.
+#Ao invés disso, você deve dividir seu código em diferentes métodos e dar a cada métodos um nome de fácil entendimento. 
+
+#Definindo um método
+def domar( numero_de_megeras )
+end
+
+#Criando uma regra para o método
+def domar( numero_de_megeras )
+  numero_de_megeras.times {
+    puts "Megera domada"
+  }
+end
+
+#Podemos omitir a palavra return da última linha do método. O Ruby irá automaticamente retornar o valor da última variável usada dentro do método.
+#Assim, nós podemos mudar a última linha para apenas numero_de_megeras.
+#Mas, uma vez que o método .times também retorna o numero_de_megeras nós podemos remover a última linha inteira.
+#Retornando um valor
+def domar( numero_de_megeras )
+  numero_de_megeras.times {
+    puts "Megera domada"
+  }
+  return numero_de_megeras #nesse caso, essa linha é opcional
+end
+
+puts domar(3)
+
+#DICAS
+#Métodos podem ser definidos com def e têm um nome. Métodos tornam os seus programas mais curtos e fáceis de ler.
+#Parâmetros: Métodos podem receber parâmetros.
+#Retornar valores: Métodos (quase) sempre retornam valores.
+
+#O método get_shakey converte um arquivo json em Hash. Porém, uma vez que a estrutura do json é convertida em um hash, ela se torna um pouco difícil de ler. Vamos então escrever um método para exibir as peças de forma legível.
+
